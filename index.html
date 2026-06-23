@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kovatski Family Blood | NLM</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#050505;
+    --panel:#0d0d0d;
+    --border:#ffffff;
+    --text:#f5f5f5;
+    --muted:#c9c9c9;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Cormorant Garamond',serif;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at center,
+        rgba(255,255,255,.05),
+        transparent 60%);
+    pointer-events:none;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(0,0,0,.92);
+    border-bottom:1px solid rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+}
+
+.nav-container{
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+}
+
+.logo{
+    font-family:'Cinzel',serif;
+    letter-spacing:4px;
+    font-size:1.3rem;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:.9rem;
+    transition:.3s;
+}
+
+nav a:hover{
+    opacity:.6;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.hero-inner{
+    border:2px solid white;
+    padding:80px;
+    max-width:900px;
+    width:100%;
+    position:relative;
+}
+
+.hero-inner::before,
+.hero-inner::after{
+    content:"";
+    position:absolute;
+    width:60px;
+    height:60px;
+    border:1px solid white;
+}
+
+.hero-inner::before{
+    top:-15px;
+    left:-15px;
+}
+
+.hero-inner::after{
+    bottom:-15px;
+    right:-15px;
+}
+
+.emblem{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:'Cinzel',serif;
+    font-size:5rem;
+    letter-spacing:8px;
+    text-transform:uppercase;
+}
+
+.hero .nlm{
+    margin-top:20px;
+    font-size:1.5rem;
+    letter-spacing:15px;
+}
+
+.hero .subtitle{
+    margin-top:25px;
+    color:var(--muted);
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section{
+    margin:120px 0;
+    padding:60px;
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.02);
+}
+
+.section h2{
+    font-family:'Cinzel',serif;
+    letter-spacing:5px;
+    margin-bottom:30px;
+    font-size:2rem;
+    text-transform:uppercase;
+}
+
+.section p{
+    font-size:1.2rem;
+    line-height:1.8;
+    color:#dddddd;
+}
+
+.founders{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    border:1px solid rgba(255,255,255,.25);
+    padding:35px;
+    transition:.3s;
+    background:rgba(255,255,255,.02);
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:white;
+}
+
+.card h3{
+    font-family:'Cinzel',serif;
+    margin-bottom:15px;
+}
+
+.timeline{
+    border-left:2px solid white;
+    padding-left:30px;
+}
+
+.timeline-item{
+    margin-bottom:35px;
+}
+
+.timeline-item h4{
+    font-family:'Cinzel',serif;
+    margin-bottom:8px;
+}
+
+.contact-box{
+    border:1px solid rgba(255,255,255,.25);
+    padding:30px;
+}
+
+.contact-box p{
+    margin-bottom:10px;
+}
+
+footer{
+    margin-top:100px;
+    border-top:1px solid rgba(255,255,255,.2);
+    text-align:center;
+    padding:60px 20px;
+}
+
+footer h3{
+    font-family:'Cinzel',serif;
+    letter-spacing:4px;
+    margin-bottom:15px;
+}
+
+footer p{
+    letter-spacing:5px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:3rem;
+}
+
+.hero-inner{
+    padding:40px;
+}
+
+nav ul{
+    gap:15px;
+    font-size:.8rem;
+}
+
+.section{
+    padding:35px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">KFB • NLM</div>
+
+        <ul>
+            <li><a href="#beliefs">Beliefs</a></li>
+            <li><a href="#origins">Origins</a></li>
+            <li><a href="#founders">Founders</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="emblem">✦</div>
+
+        <h1>
+            Kovatski<br>
+            Family Blood
+        </h1>
+
+        <div class="nlm">
+            NLM
+        </div>
+
+        <div class="subtitle">
+            Legacy • Honor • Unity
+        </div>
+
+    </div>
+
+</section>
+
+<div class="container">
+
+<section class="section" id="beliefs">
+
+    <h2>Beliefs</h2>
+
+    <p>
+        The Kovatski Family Blood is dedicated to preserving heritage,
+        strengthening bonds between generations, and encouraging personal
+        discipline, integrity, loyalty, and excellence. Members are encouraged
+        to honor the past while building a stronger future.
+    </p>
+
+</section>
+
+<section class="section" id="origins">
+
+    <h2>Origins</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <h4>Foundation</h4>
+            <p>
+                Established upon principles of family preservation,
+                historical remembrance, and collective advancement.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h4>Growth</h4>
+            <p>
+                Traditions, records, and stories were preserved and
+                expanded through succeeding generations.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h4>Present Day</h4>
+            <p>
+                Continuing to uphold values of unity, responsibility,
+                and enduring legacy.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="founders">
+
+    <h2>Founders</h2>
+
+    <div class="founders">
+
+        <div class="card">
+            <h3>Founder I</h3>
+            <p>
+                Established the original framework and guiding vision.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Founder II</h3>
+            <p>
+                Preserved records, traditions, and institutional memory.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Founder III</h3>
+            <p>
+                Expanded outreach and organizational development.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="contact">
+
+    <h2>Contact</h2>
+
+    <div class="contact-box">
+
+        <p>Email: contact@kovatski.org</p>
+        <p>Telephone: +1 (000) 000-0000</p>
+        <p>Administrative Office: By Appointment</p>
+
+    </div>
+
+</section>
+
+</div>
+
+<footer>
+
+    <h3>KOVATSKI FAMILY BLOOD</h3>
+
+    <p>NLM</p>
+
+</footer>
+
+</body>
+</html>
